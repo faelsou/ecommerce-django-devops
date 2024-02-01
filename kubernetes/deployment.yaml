@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: django-ecommerce
+spec:
+  selector:
+    matchLabels:
+      app:  django-ecommerce
+  template:
+    metadata:
+      labels:
+        app:  django-ecommerce
+    spec:
+      containers:
+      - name:  django-ecommerce
+        image: matheusnicolay/django-ecommerce:latest
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 80

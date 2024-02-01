@@ -1,0 +1,35 @@
+{% extends 'partoftemp/_dashboard.html' %}
+{% block content %}
+
+<form method="POST">
+    {% csrf_token %}
+    <div class="container content-center mt-4">
+    <div class="mb-3">
+      <label class="form-label">Nome</label>
+      {{form.first_name}}
+    </div>
+    <div class="mb-3">
+      <label  class="form-label">Sobrenome</label>
+      {{form.last_name}}
+    </div>
+    <div class="mb-3">
+        <label  class="form-label">Nome de usuário</label>
+        {{form.username}}
+    </div>
+    <div class="mb-3">
+        <label  class="form-label">E-mail</label>
+        {{form.email}}
+    </div>
+    <div class="mb-3">
+        <label  class="form-label">Senha</label>
+        {{form.password1}}
+    </div>
+    <div class="mb-3">
+        <label  class="form-label">Repita a senha</label>
+        {{form.password2}}
+    </div>
+
+    <input type="submit" value="Registrar" class="btn btn-primary">
+    </div>
+  </form>
+{% endblock %}
